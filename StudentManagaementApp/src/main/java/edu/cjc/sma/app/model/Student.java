@@ -12,11 +12,19 @@ public class Student {
 	private int StudentId;
 	private String studentFullName;
 	private String studentEmail;
+	private int studentAge;
 	private String studentCollegeName;
 	private String StudentCourse;
 	private String batchNumber;
 	private String batchMode;
 	private String feesPaid;
+	
+	public int getStudentAge() {
+		return studentAge;
+	}
+	public void setStudentAge(int studentAge) {
+		this.studentAge = studentAge;
+	}
 	public int getStudentId() {
 		return StudentId;
 	}
