@@ -11,6 +11,9 @@ public interface StudentService {
 	public List<Student> getAllStudents();
 	public List<Student> searchStudentByBatch(String batchNumber, String batchMode);
 	public void deletStudentData(int StudentId);
+	public Student getsinglestudent(int studentId);
+	public void updateStudentFees(int StudentId, int amount);
+	public void updateStudentBatch(int StudentId, String batchNumber, String batchMode);
 	
 
 }

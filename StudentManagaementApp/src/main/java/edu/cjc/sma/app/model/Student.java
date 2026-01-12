@@ -17,7 +17,7 @@ public class Student {
 	private String StudentCourse;
 	private String batchNumber;
 	private String batchMode;
-	private String feesPaid;
+	private int feesPaid;
 	
 	public int getStudentAge() {
 		return studentAge;
@@ -68,10 +68,10 @@ public class Student {
 	public void setBatchMode(String batchMode) {
 		this.batchMode = batchMode;
 	}
-	public String getFeesPaid() {
+	public int getFeesPaid() {
 		return feesPaid;
 	}
-	public void setFeesPaid(String feesPaid) {
+	public void setFeesPaid(int feesPaid) {
 		this.feesPaid = feesPaid;
 	}
 	

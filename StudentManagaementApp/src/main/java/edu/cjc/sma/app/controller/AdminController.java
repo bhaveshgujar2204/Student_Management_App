@@ -66,8 +66,38 @@ public class AdminController {
 		return "adminscreen";
 		
 	}
-
+	@RequestMapping("/fees")
+	public String updateFees(@RequestParam("StudentId") int StudentId, Model m) {
+		 Student st =  ss.getsinglestudent(StudentId);
+		 m.addAttribute("st",st);
+		
+		return "fees";
 		
 	}
+	@RequestMapping("/payfees")
+	public String payfees(@RequestParam("StudentId") int StudentId,@RequestParam("amount") int amount,Model m) {
+		ss.updateStudentFees(StudentId,amount);
+		List<Student> student=ss.getAllStudents();
+		m.addAttribute("data",student);
+		return "adminscreen";
+		
+	}
+	@RequestMapping("/batch")
+	public String batch(@RequestParam("StudentId") int StudentId, Model m) {
+		 Student st =  ss.getsinglestudent(StudentId);
+		 m.addAttribute("st",st);
+		return "batchshift";
+		
+	}
+	@RequestMapping("/batchshift")
+	public String batchshift(@RequestParam("StudentId") int StudentId,@RequestParam("batchNumber") String batchNumber,@RequestParam("batchMode") String batchMode,Model m) {
+		ss.updateStudentBatch(StudentId,batchNumber,batchMode);
+		List<Student> student=ss.getAllStudents();
+		m.addAttribute("data",student);
+		return "adminscreen";
+
+		
+}
+}
 
 

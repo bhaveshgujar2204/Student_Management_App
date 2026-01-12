@@ -11,6 +11,5 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
 
 	public List<Student> findAllByBatchNumberAndBatchMode(String batchNumber,String batchMode);
 
-	//public void deleteByStudentId(int StudentId);
 
 }

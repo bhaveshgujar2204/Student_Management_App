@@ -1,6 +1,7 @@
 package edu.cjc.sma.app.serviceimpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,6 +38,32 @@ public class StudentserviceImpl implements StudentService {
 		sr.deleteById(StudentId);
 		
 	}
+
+	@Override
+	public Student getsinglestudent(int studentId) {
+		Optional<Student> op=sr.findById(studentId);
+		return op.get();
+	}
+
+	@Override
+	public void updateStudentFees(int StudentId, int amount) {
+		Optional<Student> opStudent=sr.findById(StudentId);
+		Student st=opStudent.get();
+		st.setFeesPaid(st.getFeesPaid()+amount);
+		sr.save(st);
+		
+	}
+
+	@Override
+	public void updateStudentBatch(int StudentId, String batchNumber, String batchMode) {
+		Optional<Student> opst=sr.findById(StudentId);
+		Student st=opst.get();
+		st.setBatchNumber(batchNumber);
+		//st.setBatchMode(batchMode);
+		sr.save(st);
+		
+	}
+	
 	
 
 }

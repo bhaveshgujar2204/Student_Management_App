@@ -85,7 +85,6 @@ body.dark-mode .glass-card {
         url("images/viewstudents.jpg") center/cover no-repeat;
 }
 
-}
 
 /* ================= HEADINGS ================= */
 .heading {
@@ -224,7 +223,7 @@ body.dark-mode .form-select {
                 <!-- GLASS CARD -->
                 <div class="glass-card p-4" style="border-radius:14px;">
 
-                    <h3 class="heading">View Students</h3>
+                    <h3 class="heading text-center">View Students</h3>
 
                     <!-- SEARCH FORM -->
                     <form action="search" class="row g-3 mb-4 justify-content-center">
@@ -290,18 +289,26 @@ body.dark-mode .form-select {
                                         <td>₹ ${s.feesPaid}</td>
                                         <td>
                                             <div class="btn-group btn-group-sm">
-                                                <a class="btn btn-success me-1">Pay Fees</a>
-                                                <a class="btn btn-primary me-1">Batch Shift</a>
+                                                <a href="fees?StudentId=${s.studentId}"
+                                                   class="btn btn-success me-1">Pay Fees</a>
+                                                   
+                                                <a href="batch?StudentId=${s.studentId}"
+                                                   class="btn btn-primary me-1">Batch Shift</a>
+                                                   
                                                 <a href="delete?StudentId=${s.studentId}" 
                                                    class="btn btn-danger me-1">
-                                                   Remove
-                                                </a>
+                                                   Remove </a>
+                                                
                                             </div>
                                         </td>
                                     </tr>
                                 </c:forEach>
                             </tbody>
                         </table>
+                    </div>
+                    <div class="text-center">
+                    <a href="page1" > 1</a> || <a href="page2" > 2</a> ||<a href="page3"> 3</a> 
+                    
                     </div>
 
                 </div>
@@ -318,6 +325,7 @@ body.dark-mode .form-select {
 <div class="spacer"></div>
 
 <!-- SCRIPT -->
+
 <script>
 function toggleTheme() {
     const body = document.body;
@@ -331,6 +339,7 @@ function toggleTheme() {
     } else {
         btn.innerHTML = "🌙 Dark";
     }
+   
 }
 </script>
 
