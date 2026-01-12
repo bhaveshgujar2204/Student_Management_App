@@ -307,7 +307,7 @@ body.dark-mode .form-select {
                         </table>
                     </div>
                     <div class="text-center">
-                    <a href="page1" > 1</a> || <a href="page2" > 2</a> ||<a href="page3"> 3</a> 
+                    <a href="pageing?pageno=0" > 1</a> || <a href="pageing?pageno=01" > 2</a> ||<a href="pageing?pageno=2"> 3</a> 
                     
                     </div>
 

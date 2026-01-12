@@ -14,6 +14,7 @@ public interface StudentService {
 	public Student getsinglestudent(int studentId);
 	public void updateStudentFees(int StudentId, int amount);
 	public void updateStudentBatch(int StudentId, String batchNumber, String batchMode);
+	public List<Student> pagedata(int pageno, int pagesize);
 	
 
 }

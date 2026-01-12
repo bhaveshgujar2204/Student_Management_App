@@ -97,7 +97,15 @@ public class AdminController {
 		return "adminscreen";
 
 		
-}
+}     
+	@RequestMapping("/pageing")
+	public String pageing(@RequestParam("pageno") int pageno,Model m) {
+		int pagesize=3;
+	  List<Student> list=  ss.pagedata(pageno,pagesize);
+	  m.addAttribute("data",list);
+		return "adminscreen";
+		
+	}
 }
 
 

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import edu.cjc.sma.app.model.Student;
@@ -62,6 +63,13 @@ public class StudentserviceImpl implements StudentService {
 		//st.setBatchMode(batchMode);
 		sr.save(st);
 		
+	}
+
+	@Override
+	public List<Student> pagedata(int pageno, int pagesize) {
+	PageRequest p=	PageRequest.of(pageno,pagesize);
+	List<Student> list=sr.findAll(p).getContent();
+		return list;
 	}
 	
 	
