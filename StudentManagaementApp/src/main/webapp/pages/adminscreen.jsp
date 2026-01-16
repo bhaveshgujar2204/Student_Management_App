@@ -129,7 +129,7 @@ body.dark-mode .form-select {
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
     <div class="container-fluid">
-        <img src="images/cjclogo.jpeg" width="100" height="50">
+        <img src="images/cjclogo.jpg" width="100" height="50">
 
         <div class="ms-auto">
             <a href="#enroll" class="btn btn-outline-light">Enroll Student</a>
