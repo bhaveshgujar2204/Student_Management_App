@@ -152,7 +152,7 @@ body.dark-mode .form-select {
                 <div class="glass-card p-4" style="border-radius: 14px;">
                     <h3 class="heading">Student Enrollment Form</h3>
 
-                    <form action="enroll_student">
+                    <form action="enroll_student " method = "post">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <input type="text" class="form-control" name="studentFullName" placeholder="Full Name" required>

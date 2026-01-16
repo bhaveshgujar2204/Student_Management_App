@@ -38,12 +38,20 @@ public class AdminController {
 			
 		}
 	@RequestMapping("/enroll_student")	
-	public String login(@ModelAttribute Student student, Model m){
+	public String login(@ModelAttribute Student student){
 		ss.savestudentdetails(student);
+	
+		return "redirect:/adminscreen";
+	}
+	
+	@RequestMapping("/adminscreen")
+	public String gotoAdmin(Model m) {
 		List<Student> students=ss.getAllStudents();
 		m.addAttribute("data",students);
 		return "adminscreen";
 	}
+
+	
 	@RequestMapping("/search")
 	public String getbatchstudent(@RequestParam("batchNumber") String batchNumber, @RequestParam("batchMode") String batchMode, Model m) {
 		List<Student> result=ss.searchStudentByBatch(batchNumber,batchMode);
